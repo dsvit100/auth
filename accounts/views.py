@@ -42,4 +42,5 @@ def login(request):
 def logout(request):
     # delete 로직
     auth_logout(request)
+    # DB에 있는 세션 키값을 찾아서 지워줌
     return redirect('accounts:login')
