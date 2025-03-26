@@ -1,3 +1,9 @@
 가상 환경 만들기
 가상 환경 활성화
 .git ignore
+pip install django
+
+user -> article -> comment 순서로 만들 예정
+
+auth 프로젝트 생성
+account 앱 생성, 등록
