@@ -1,5 +1,5 @@
 from .models import User
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 # 우리가 만든 폼으로 사용할거야
 
@@ -9,3 +9,7 @@ class CustomUserCreationForm(UserCreationForm):
         model = User
         # fields = '__all__'
         fields = ('username', ) # 튜플로 적어야함. password는 필수여서 적지 않아도 출력됨
+
+class CustomAuthenticationForm(AuthenticationForm):
+    # 인증 페이지 폼도 확정할 수 있으므로 확장시키는 것
+    pass
