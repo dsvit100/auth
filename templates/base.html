@@ -12,7 +12,8 @@
         {% if user.is_authenticated %}
         <a href="" class="nav-link disabled">{{user}}</a>
         <a href="{% url 'accounts:logout'%}" class="nav-link">logout</a>
-        
+            <!-- 로그인 했을 때만 글 달 수 있도록 작성 -->
+             <a href="{% url 'articles:create' %}" class="nav-link">create</a>
         {% else %}
         <a href="{% url 'accounts:signup' %}" class="nav-link">signup</a>
         <a href="{% url 'accounts:login' %}" class="nav-link">login</a>
