@@ -7,3 +7,5 @@ user -> article -> comment 순서로 만들 예정
 
 auth 프로젝트 생성
 account 앱 생성, 등록
+
+DIR에 BASE_DIR / 'templates' 설정 및 생성
