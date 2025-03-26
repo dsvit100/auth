@@ -29,7 +29,7 @@ def login(request):
         if form.is_valid():
             auth_login(request, form.get_user()) # id/pw에 맞는 값을 찾아주는 함수 (form.get_user), 값에 맞는 사용자에게 맞는 페이지를 제공해주기 위한
             #### 설명해주신대영
-            return redirect('accounts:login')
+            return redirect('articles:index')
 
     else:
         form = CustomAuthenticationForm()

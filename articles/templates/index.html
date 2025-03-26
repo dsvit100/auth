@@ -1,4 +1,10 @@
 {% extends 'base.html' %}
 {% block body %}
 <h1>index입니다.</h1>
+{% for article in articles %}
+<h3>{{article.title}}</h3>
+<p>{{article.content}}</p>
+<p>{{article.user}}</p>
+<hr>
+{% endfor %}
 {% endblock%}
