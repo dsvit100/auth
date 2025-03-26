@@ -8,4 +8,9 @@ user -> article -> comment 순서로 만들 예정
 auth 프로젝트 생성
 account 앱 생성, 등록
 
-DIR에 BASE_DIR / 'templates' 설정 및 생성
+DIR에 BASE_DIR / 'templates' 설정 및 생성, base.html 구조 잡기
+
+model에서 class 생성 (user)
+user는 django에서 제공하는 기능을 이용할 것 (AbstractUser를 상속받음)
+장고에서 기본적으로 제공하는 user와 내가 설정한 모델이 충돌될 수 있으므로
+setting 최하단에 내가 쓸 user를 지정해주기`

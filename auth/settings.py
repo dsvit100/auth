@@ -122,3 +122,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# 모든 시스템에 내가 만든 USER시스템을 이용해줘
+AUTH_USER_MODEL = 'accounts.User' 
