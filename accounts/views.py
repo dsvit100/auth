@@ -28,14 +28,11 @@ def login(request):
         # 우리가 생성하려는 건 id/pw가 아니라 세션정보를 생성하는 것이기 때문에 request를 한 번 더 작성
         if form.is_valid():
             auth_login(request, form.get_user()) # id/pw에 맞는 값을 찾아주는 함수 (form.get_user), 값에 맞는 사용자에게 맞는 페이지를 제공해주기 위한
-            #### 설명해주신대영
-            next_url = request.GET.get(next) # ?뒤에 있는 값이 get으로 들어옴
-            # 로그인 경우
-            # /accounts/login/ => next_url 에 none이 들어옴
-            # /accoutns/login/?next=/articles/create => next_rul에 articles/create가 들어옴
+            next_url = request.GET.get('next') # ?뒤에 있는 값이 get으로 들어옴
 
             # next가 없을 때 => None or 'articles:index'
             # next가 있을 때 => 'articles/create' of 'articles/index'
+
             return redirect(next_url or 'articles:index')
             # next_url이 T이기 때문에 뒤는 무조건 T = 단축평가
             # articles/create로 접근했는데 login창이 나왔다면 -> 로그인 후 create로 들어감
