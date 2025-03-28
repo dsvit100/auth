@@ -3,6 +3,12 @@
 <h1>{{article.title}}</h1>
 <p>{{article.content}}</p>
 <p>{{article.user}}</p>
+
+{% if user == article.user %}
+<a href="">update</a>
+<a href="{% url 'articles:delete' article.id %}">delete</a>
+{% endif %}
+
 <hr>
 <!-- 아직 comment_create를 만들지 않았지만... -->
  <!-- detail에서 comment값만 변경되므로 action을 채워줌 -->
@@ -28,6 +34,5 @@
 
 
 
-<!-- <a href="{% url 'articles:index' %}">home</a> -->
 
 {% endblock %}

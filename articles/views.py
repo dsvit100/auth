@@ -63,9 +63,16 @@ def comment_create(request, article_id):
         
         return redirect('articles:detail', id=article_id)
 
+@login_required
+def delete(request, id):
+    article = Article.objects.get(id=id)
+    if request.user == article.user:
+        article.delete()
+    return redirect('articles:index')
+
 
 @login_required
-def comment_delete(reuqest, article_id, comment_id):
+def comment_delete(request, article_id, comment_id):
     comment = Comment.objects.get(id=comment_id)
     if request.user == comment.user:
     # request.user = 현재 접속한 사람
