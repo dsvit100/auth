@@ -17,3 +17,10 @@ class Article(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     # 3. get_user_model 함수 활용
     # user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+
+
+class comments(models.Model):
+    content = models.TextField()
+    # 두가지 요소와 1:N 관계
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    article = models.ForeignKey(Article, on_delete=models.CASCADE)
