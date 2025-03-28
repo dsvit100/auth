@@ -3,9 +3,10 @@
 <h1>{{article.title}}</h1>
 <p>{{article.content}}</p>
 <p>{{article.user}}</p>
+<a href="{% url 'articles:index' %}">home</a>
 
 {% if user == article.user %}
-<a href="">update</a>
+<a href="{% url 'articles:update' article.id %}">update</a>
 <a href="{% url 'articles:delete' article.id %}">delete</a>
 {% endif %}
 
