@@ -17,3 +17,6 @@ setting 최하단에 내가 쓸 user를 지정해주기
 
 
 login = id, pw를 장고에게 주고 장고가 세션을 발급해주면 세션을 'cookie'에 저장 (create로직과 비슷)
+
+장고에서 bootstrap을 편하게 쓸 수 있는 라이브러리 다운하기
+(django-bootstrap)
