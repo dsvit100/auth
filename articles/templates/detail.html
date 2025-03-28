@@ -11,6 +11,17 @@
     {{form}}
     <input type="submit">
 </form>
+
+<hr>
+{% for comment in article.comment_set.all %}
+<!-- 현재 페이지의 article에 딸린 모든 comment를 가져와 -->
+ <!-- views.py에서 쓰는 경우 comment = article.comment_set.all() -->
+  <li>{{comment.user.username}} - {{comment.content}}</li>
+{% endfor %}
+
+
+
+
 <!-- <a href="{% url 'articles:index' %}">home</a> -->
 
 {% endblock %}
