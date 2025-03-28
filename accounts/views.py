@@ -4,6 +4,7 @@ from django.contrib.auth import login as auth_login
 # login이라는 함수를 우리가 만들었기 때문에, auth_login으로 이름을 바꿔줌
 from django.contrib.auth import logout as auth_logout
 # 동일하게 auth_logout으로 바꿔줌
+from .models import User
 
 # Create your views here.
 
@@ -51,3 +52,13 @@ def logout(request):
     auth_logout(request)
     # DB에 있는 세션 키값을 찾아서 지워줌
     return redirect('accounts:login')
+
+
+def profile(request, username):
+    user_profile = User.objects.get(username=username) # id를 기반으로 찾는 것
+    context = {
+        'user_profile': user_profile,
+        # 장고에서 쓰는 user와 충돌되기 때문에 user가 아닌 user_profile로 변경
+    }
+    return render(request, 'profile.html', context)
+    
