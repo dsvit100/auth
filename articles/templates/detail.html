@@ -3,5 +3,14 @@
 <h1>{{article.title}}</h1>
 <p>{{article.content}}</p>
 <p>{{article.user}}</p>
+<hr>
+<!-- 아직 comment_create를 만들지 않았지만... -->
+ <!-- detail에서 comment값만 변경되므로 action을 채워줌 -->
+<form action="{% url 'articles:comment_create' article.id %}" method="POST">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit">
+</form>
+<!-- <a href="{% url 'articles:index' %}">home</a> -->
 
 {% endblock %}

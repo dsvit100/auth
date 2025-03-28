@@ -19,7 +19,7 @@ class Article(models.Model):
     # user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
 
 
-class comments(models.Model):
+class Comment(models.Model):
     content = models.TextField()
     # 두가지 요소와 1:N 관계
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
