@@ -17,6 +17,12 @@
 <!-- 현재 페이지의 article에 딸린 모든 comment를 가져와 -->
  <!-- views.py에서 쓰는 경우 comment = article.comment_set.all() -->
   <li>{{comment.user.username}} - {{comment.content}}</li>
+
+<!-- user = 장고에 기본으로 들어가 있음 -->
+{% if user == comment.user %}
+<a href="{% url 'articles:comment_delete' article.id comment.id %}">delete</a>
+{% endif %}
+<!-- 가려는 주소는 'articles/123/comments/123/delete' -->
 {% endfor %}
 
 
